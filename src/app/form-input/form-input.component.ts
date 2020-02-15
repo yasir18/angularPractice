@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from '../app.component';
+import { Employee } from '../home/home.component';
 
 
 @Component({
@@ -22,15 +22,12 @@ export class FormInputComponent implements OnInit {
 
   onSubmit(){
 
-   // console.log(this.employees);
-    console.log(this.name);
     this.employees.push(new Employee(this.name,this.quickLookId));
-    console.log(this.employees);
-    //this.clear()
+    this.clear()
   }
 
   clear(){
-    this.newEmployee.name="",
-    this.newEmployee.quickLookId=""
+    this.name="",
+    this.quickLookId=""
   }
 }

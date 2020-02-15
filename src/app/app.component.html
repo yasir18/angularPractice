@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
-</head>
-<body>
-  <div class="container" >
-
-    <h2>Forms Exercise</h2>
-    <app-form-input [employees]="employees"></app-form-input>
-  </div>
-  <div class="container">  
-    <app-display-employees [employees]="employees"></app-display-employees>
-
-  </div>
+<div>
+  <nav>
+    <a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home Page</a> | 
+  <a [routerLink]="['/about']" routerLinkActive="router-link-active" >About Page</a>
+  </nav>
   
-  
-</body>
-</html>
+  <router-outlet></router-outlet>
+</div>
