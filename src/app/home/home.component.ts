@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employees.service';
 
 @Component({
   selector: 'app-home',
@@ -8,22 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   title = 'FormsExercise';
-  employee:Employee = new Employee("yasir","ya185024");
-  employees:Employee[] = [this.employee];
-
   constructor() { }
 
   ngOnInit() {
   }
 
 }
-export class Employee{
-  public name:string;
-  public quickLookId:string;
 
-  constructor(name:string,qlId:string){
-    this.name=name;
-    this.quickLookId=qlId;
-  }
-  
-}

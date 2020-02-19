@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from '../home/home.component';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import {EmployeesService, Employee } from '../employees.service'
 
 
 @Component({
@@ -9,20 +9,20 @@ import { Employee } from '../home/home.component';
 })
 export class FormInputComponent implements OnInit {
 
-  @Input() employees:Employee[];
-  newEmployee=new Employee("","");
-  name:string;
-  quickLookId:string;
+  name:string="";
+  quickLookId:string="";
+  newEmployee:Employee = new Employee('','');
+  @ViewChild('empForm') form: any;
 
-  constructor() {    
+  constructor(private employeeServices:EmployeesService) {    
    }
 
   ngOnInit() {
   }
 
   onSubmit(){
-
-    this.employees.push(new Employee(this.name,this.quickLookId));
+    console.log(this.form.value)
+    this.employeeServices.addEmployee(this.form.value);
     this.clear()
   }
 
